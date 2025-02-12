@@ -1,5 +1,6 @@
 let isPlaying = false; // Track if GIF is currently playing
 let clickCount = 0; // Initialize counter
+let sound = document.getElementById("sound-effect");
 
 document.documentElement.addEventListener("click", function() {
     if (isPlaying) return; // Prevent multiple clicks while playing
@@ -15,10 +16,13 @@ document.documentElement.addEventListener("click", function() {
 
     isPlaying = true; // Prevent multiple activations
     gif.src = gifSrc; // Play GIF
+    sound.currentTime = 0; // Restart sound if it was already playing
+    sound.play();
 
     // Set an explicit timeout to reset the image
     setTimeout(() => {
         gif.src = staticSrc; // Reset to static image
-        isPlaying = false; // Allow clicking again
-    }, 1500); // Adjust this value to match GIF duration
+        isPlaying = false;
+        sound.pause(); // Allow clicking again
+    }, 1200); // Adjust this value to match GIF duration
 });
