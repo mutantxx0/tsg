@@ -20,25 +20,112 @@ html, body {
     padding-top: 20px; /* Adds spacing so top content is visible */
 }
 
+/* 🔹 Ensure proper alignment in `.top-bar` */
+.top-bar {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+    position: relative; /* Keeps it within document flow */
+}
 
-/* Professionally position the header */
+/* 🔹 Ensure logo is properly aligned */
+.logo {
+    width: 60px; 
+    height: auto;
+}
+
+/* 🔹 Ensure header is centered */
 .header {
-    font-size: clamp(40px, 5vw, 70px);  /* Dynamic resizing */
+    font-size: clamp(40px, 5vw, 70px);
     font-weight: bold;
     text-align: center;
-    white-space: nowrap;  /* Prevents breaking into multiple lines */
-    overflow: visible;  /* Ensures text does not overflow screen */
-    width: 95%;  /* Adjusted width for better responsiveness */
-    max-width: 1200px;
-    margin: 0 auto;  /* Center the text */
+    flex-grow: 1;
+    white-space: nowrap;
 }
-.header-container {
+
+/* 🔹 Icons container */
+.icons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;  /* Adds spacing */
-    box-sizing: border-box;
+    gap: 15px;
+    align-items: right;
+    right: 20px;
+}
+
+/* 🔹 Social icons */
+.social-icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    right: 20px;
+}
+
+.telegram-icon {
+    font-size: 32px;
+    color: black;
+    cursor: pointer;
+    right: 20px;
+}
+
+/* 🔹 Ensure proper spacing in mobile layout */
+@media screen and (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: right;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 50px; /* Slightly smaller logo on mobile */
+        height: auto;
+    }
+
+    .icons {
+        display: flex;
+        gap: 10px;
+        align-items: right;
+    }
+
+    .social-icon, .telegram-icon {
+        width: 25px; /* Make icons smaller */
+        font-size: 25px;
+    }
+
+    /* 🔹 Reduce header size to prevent overlapping */
+    .header {
+        font-size: 32px; /* Reduce font size */
+        max-width: 80%; /* Prevents overflow */
+        text-align: center;
+        margin: 10px auto; /* Center it properly */
+    }
+}
+
+/* 🔹 Fix for extra small screens (phones) */
+@media screen and (max-width: 480px) {
+    .top-bar {
+        flex-direction: column; /* Stack logo & icons */
+        align-items: right;
+    }
+
+    .logo {
+        width: 45px;
+    }
+
+    .icons {
+        gap: 8px;
+    }
+
+    .social-icon, .telegram-icon {
+        width: 22px; /* Adjust icons */
+    }
+
+    .header {
+        font-size: 28px; /* Reduce font size further */
+        max-width: 90%;
+    }
 }
 
 /* Center content and make it fit */
@@ -58,20 +145,14 @@ html, body {
     height: auto;
     border-radius: 10px;
 }
-.social-icon {
-    width: 30px; /* Adjust size of Twitter icon */
-    height: auto;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 20px;
-    right: 50px;
-}
+
 .second-section {
     width: 100%;
     text-align: center;
     margin-top: 30px; /* Add spacing */
+    font-size: 28px;
 }
+
 /* Ensure TSA counter fits properly */
 .tsa-counter {
     font-size: 24px;
@@ -82,41 +163,7 @@ html, body {
     min-width: 150px;
 }
 
-/* Icons and Footer adjustments */
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;  /* Ensure it's aligned to the left */
-    width: 60px; /* Adjust size */
-    height: auto;
-    cursor: pointer;
-}
-
-/* 🔹 Icons in Top-Right (Red Marking) */
-.icons, .social-icon {
-    display: flex;
-    gap: 15px;
-}
-
-.close-icon, .social-icon, .telegram-icon {
-    font-size: 32px;
-    color: black;
-    cursor: pointer;
-}
-
-/* 🔹 Positioning the Icons in the Exact Corner */
-.close-icon {
-    position: absolute;
-    top: 10px;
-    right: 50px;
-}
-
-.telegram-icon {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-}
-
+/* Footer */
 .footer {
     font-size: 18px;
     font-weight: bold;
@@ -163,6 +210,7 @@ html, body {
     .footer {
         font-size: 16px;
     }
+
     .gif-grid {
         flex-direction: column; /* Stack GIFs vertically on mobile */
         align-items: center;
