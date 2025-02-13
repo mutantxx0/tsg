@@ -37,10 +37,10 @@ html, body {
     flex-wrap: nowrap;
 }
 
-/* Responsive GIF (Auto-Scale) */
+/* 🔹 Increase GIF Size by 1.5x */
 #gif-container {
-    width: 50vh; /* Use viewport height for proper scaling */
-    max-width: 60%; /* Prevent overflow */
+    width: 75vh; /* Increased size */
+    max-width: 90%; /* Prevent overflow */
     height: auto;
     border-radius: 10px;
 }
@@ -75,7 +75,7 @@ html, body {
     margin-top: 10px;
 }
 
-/* 🔹 Make Sure Everything Fits on Mobile */
+/* 🔹 No Scrolling on Mobile + Adjust Image */
 @media screen and (max-width: 768px) {
     .header {
         font-size: 48px; /* Reduce font size */
@@ -86,12 +86,12 @@ html, body {
     }
 
     #gif-container {
-        width: 40vh; /* Scale GIF properly */
-        max-width: 80%;
+        width: 60vh; /* Increase image size for mobile */
+        max-width: 90%;
     }
 
     .tsa-counter {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .icons i {
@@ -103,23 +103,23 @@ html, body {
     }
 }
 
-/* Extra small screens (phones) */
+/* 🔹 Extra Small Screens (Phones) */
 @media screen and (max-width: 480px) {
     .header {
-        font-size: 36px;
+        font-size: 40px;
     }
 
     #gif-container {
-        width: 35vh;
-        max-width: 90%;
+        width: 50vh; /* Keep GIF large on smaller screens */
+        max-width: 95%;
     }
 
     .tsa-counter {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .icons i {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .footer {
