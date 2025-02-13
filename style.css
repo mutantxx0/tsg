@@ -200,14 +200,24 @@ html, body {
         width: 50px; /* Slightly smaller logo on mobile */
         height: auto;
     }
+    .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        justify-content: center;
+        gap: 15px; /* Adds spacing */
+        width: 100%;
+    }
+
     .tsa-counter {
         font-size: 20px; /* Reduce font size for mobile */
         padding: 10px 15px;
         text-align: center;
-        min-width: 180px; /* Ensure it doesn't shrink too much */
-        max-width: 90%;
-        overflow: hidden;
-        white-space: normal; /* Prevents text breaking into multiple lines */
+        min-width: 160px; /* Ensures it doesn’t shrink too much */
+        max-width: 90%; /* Prevents it from extending beyond the screen */
+        word-break: break-word; /* Ensures text breaks properly */
+        white-space: normal; /* Allows wrapping */
+        overflow-wrap: break-word; /* Additional wrap handling */
+        display: block; /* Forces it to take full width when needed */
     }
 
     /* 🔹 Reduce header size & ensure visibility */
@@ -246,8 +256,9 @@ html, body {
     }
     .tsa-counter {
         font-size: 18px; /* Further reduce font size */
-        min-width: 160px;
+        min-width: 140px; /* Prevent excessive shrinking */
         max-width: 95%;
+        word-break: break-word; /* Extra security for breaking long words */
     }
 
     .logo {
