@@ -4,76 +4,125 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100vh; /* Full height of the screen */
+    width: 100vw; /* Full width of the screen */
+    overflow: hidden; /* Prevents scrolling */
     background-color: #00C17C;
     font-family: Arial, sans-serif;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of screen */
-    width: 100vw;
     text-align: center;
     flex-direction: column;
 }
 
 /* Professionally position the header */
 .header {
-    font-size: 72px; /* Large but not overwhelming */
+    font-size: 60px; /* Large but not too big */
     font-weight: 900;
-    text-align: center;
-    margin-bottom: 30px; /* Balance spacing */
-    margin-top: 20px; /* Prevents it from being too high */
+    max-width: 90%;
+    word-wrap: break-word; /* Prevents text overflow */
+    margin-bottom: 10px;
 }
 
-/* Ensure content is properly centered */
+/* Center content and make it fit */
 .content {
     display: flex;
     align-items: center;
-    gap: 30px;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
-/* Maintain the large GIF size while keeping it centered */
+/* Responsive GIF (Auto-Scale) */
 #gif-container {
-    width: 650px; /* Same size */
+    width: 50vh; /* Use viewport height for proper scaling */
+    max-width: 60%; /* Prevent overflow */
     height: auto;
-    max-width: 90%;
     border-radius: 10px;
-    margin: 0 auto; /* Ensure centering */
-    display: block;
 }
 
-/* Keep TSA counter properly aligned */
+/* Ensure TSA counter fits properly */
 .tsa-counter {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    color: black;
     background: rgba(255, 255, 255, 0.2);
-    padding: 12px 20px;
-    border-radius: 10px;
-    min-width: 200px;
-    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 150px;
 }
 
-/* Properly position icons */
+/* Icons and Footer adjustments */
 .icons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-top: 40px; /* Push icons down */
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .icons i {
-    font-size: 40px;
-    color: black;
+    font-size: 30px;
     cursor: pointer;
 }
 
 .footer {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+/* 🔹 Make Sure Everything Fits on Mobile */
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 48px; /* Reduce font size */
+    }
+
+    .content {
+        flex-direction: column; /* Stack GIF and counter */
+    }
+
+    #gif-container {
+        width: 40vh; /* Scale GIF properly */
+        max-width: 80%;
+    }
+
+    .tsa-counter {
+        font-size: 20px;
+    }
+
+    .icons i {
+        font-size: 25px;
+    }
+
+    .footer {
+        font-size: 16px;
+    }
+}
+
+/* Extra small screens (phones) */
+@media screen and (max-width: 480px) {
+    .header {
+        font-size: 36px;
+    }
+
+    #gif-container {
+        width: 35vh;
+        max-width: 90%;
+    }
+
+    .tsa-counter {
+        font-size: 18px;
+    }
+
+    .icons i {
+        font-size: 20px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
 }
