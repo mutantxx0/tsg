@@ -185,62 +185,73 @@ html, body {
 }
 
 /* 🔹 No Scrolling on Mobile + Adjust Image */
+/* 🔹 Fix mobile layout while keeping laptop unchanged */
 @media screen and (max-width: 768px) {
-    .header {
-        font-size: 48px; /* Reduce font size */
-    }
-
-    .content {
-        flex-direction: column; /* Stack GIF and counter */
-    }
-
-    #gif-container {
-        width: 60vh; /* Increase image size for mobile */
-        max-width: 90%;
-    }
-
-    .tsa-counter {
-        font-size: 22px;
-    }
-
-    .icons i {
-        font-size: 25px;
-    }
-
-    .footer {
-        font-size: 16px;
-    }
-
-    .gif-grid {
-        flex-direction: column; /* Stack GIFs vertically on mobile */
+    .top-bar {
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        position: relative;
     }
 
-    .gif-grid img {
-        width: 90%; /* Make GIFs larger on mobile */
+    .logo {
+        width: 50px; /* Slightly smaller logo on mobile */
+        height: auto;
+    }
+
+    /* 🔹 Reduce header size & ensure visibility */
+    .header {
+        font-size: 28px; /* Reduce font size */
+        max-width: 70%; /* Prevents text cutoff */
+        text-align: center;
+        white-space: normal; /* Allow wrapping if needed */
+        overflow: hidden; /* Prevents it from breaking layout */
+    }
+
+    /* 🔹 Align icons to the right without overlap */
+    .icons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .social-icon, .telegram-icon {
+        width: 25px; /* Make icons smaller */
+        font-size: 25px;
     }
 }
 
-/* 🔹 Extra Small Screens (Phones) */
+/* 🔹 Fix for extra small screens (phones) */
 @media screen and (max-width: 480px) {
+    .top-bar {
+        flex-direction: column; /* Stack logo, header & icons */
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 45px;
+    }
+
+    .icons {
+        position: static; /* Reset positioning */
+        gap: 8px;
+    }
+
+    .social-icon, .telegram-icon {
+        width: 22px; /* Adjust icons */
+    }
+
     .header {
-        font-size: 40px;
-    }
-
-    #gif-container {
-        width: 50vh; /* Keep GIF large on smaller screens */
-        max-width: 95%;
-    }
-
-    .tsa-counter {
-        font-size: 20px;
-    }
-
-    .icons i {
-        font-size: 22px;
-    }
-
-    .footer {
-        font-size: 14px;
+        font-size: 24px; /* Reduce font size further */
+        max-width: 90%;
+        text-align: center;
     }
 }
