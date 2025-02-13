@@ -200,6 +200,15 @@ html, body {
         width: 50px; /* Slightly smaller logo on mobile */
         height: auto;
     }
+    .tsa-counter {
+        font-size: 20px; /* Reduce font size for mobile */
+        padding: 10px 15px;
+        text-align: center;
+        min-width: 180px; /* Ensure it doesn't shrink too much */
+        max-width: 90%;
+        overflow: hidden;
+        white-space: nowrap; /* Prevents text breaking into multiple lines */
+    }
 
     /* 🔹 Reduce header size & ensure visibility */
     .header {
@@ -234,6 +243,11 @@ html, body {
         align-items: center;
         justify-content: center;
         gap: 10px;
+    }
+    .tsa-counter {
+        font-size: 18px; /* Further reduce font size */
+        min-width: 160px;
+        max-width: 95%;
     }
 
     .logo {
