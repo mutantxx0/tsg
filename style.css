@@ -207,7 +207,7 @@ html, body {
         min-width: 180px; /* Ensure it doesn't shrink too much */
         max-width: 90%;
         overflow: hidden;
-        white-space: nowrap; /* Prevents text breaking into multiple lines */
+        white-space: normal; /* Prevents text breaking into multiple lines */
     }
 
     /* 🔹 Reduce header size & ensure visibility */
