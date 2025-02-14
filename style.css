@@ -142,10 +142,6 @@ html, body {
         position: relative;
     }
 
-    .logo {
-        width: 90px; /* Slightly smaller logo on mobile */
-        height: auto;
-    }
     .content {
         flex-direction: column; /* Stack elements vertically */
         align-items: center;
@@ -189,6 +185,10 @@ html, body {
     .social-icon, .telegram-icon {
         width: 25px; /* Make icons smaller */
         font-size: 25px;
+        height: auto;
+    }
+    .logo {
+        width: 90px; /* Slightly smaller logo on mobile */
         height: auto;
     }
 }
