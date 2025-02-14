@@ -129,6 +129,19 @@ html, body {
     height: auto;
     border-radius: 10px;
 }
+.two-pics {
+    display: flex;          /* Display images side by side by default */
+    gap: 20px;              /* Spacing between images */
+    justify-content: center;/* Centers them horizontally on larger screens */
+    align-items: center;    /* Aligns them vertically (optional) */
+    max-width: 700px;      /* Optional: limit container width */
+    margin: 0 auto;         /* Center the container if desired */
+  }
+  
+  .responsive-img {
+    max-width: 100%;        /* Ensure the images shrink if needed */
+    height: auto;           /* Maintain aspect ratio */
+  }
 
 /* 🔹 No Scrolling on Mobile + Adjust Image */
 /* 🔹 Fix mobile layout while keeping laptop unchanged */
@@ -188,9 +201,16 @@ html, body {
         height: auto;
     }
     .logo {
-        width: 90px; /* Slightly smaller logo on mobile */
+        width: 110px; /* Slightly smaller logo on mobile */
         height: auto;
     }
+    .two-pics {
+        flex-direction: column; /* Stack images vertically on mobile */
+      }
+      .responsive-img {
+        max-width: 80%;        /* Keep them smaller so they fit nicely */
+        margin: 0 auto;        /* Center each image horizontally */
+      }
 }
 
 /* 🔹 Fix for extra small screens (phones) */
