@@ -7,9 +7,9 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: #a899cc; /* Updated Background Color */
+    background-color: #ffeeee; /* Updated Background Color */
     font-family: Arial, sans-serif;
-    color: black;
+    color: #ee5326;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,17 @@ html, body {
     text-align: center;
     overflow-y: auto; /* Allows scrolling */
     overflow-x: hidden; /* Prevents horizontal scroll */
-    padding-top: 20px; /* Adds spacing so top content is visible */
+    padding-top: 8px; /* Adds spacing so top content is visible */
+}
+.tsa-counter {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffeeee;       /* Text color */
+    background-color: #ee5326; /* Box background color */
+    padding: 12px 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
 }
 
 /* 🔹 Ensure proper alignment in `.top-bar` */
@@ -26,19 +36,21 @@ html, body {
     align-items: right;
     justify-content: space-between;
     width: 100%;
-    padding: 15px 20px;
+    padding: 0px 0px;
     position: relative; /* Keeps it within document flow */
 }
 
 /* 🔹 Ensure logo is properly aligned */
 .logo {
-    width: 60px; 
-    height: auto;
+    height: 120px;     /* Adjust as needed */
+    width: auto;      /* Keep aspect ratio */
+    cursor: pointer;  /* Optional: give it a pointer cursor */
 }
 #click-instruction {
     font-size: 28px;
     margin: 15px 0;
-    color: #000; /* or whatever color fits your design */
+    color: #ee5326; 
+    padding: 0px 0px/* or whatever color fits your design */
   }
 
 /* 🔹 Ensure header is centered */
@@ -60,8 +72,8 @@ html, body {
 
 /* 🔹 Social icons */
 .social-icon {
-    width: 30px;
-    height: auto;
+    width: aut0;
+    height: 3vw;
     cursor: pointer;
     right: 20px;
 }
@@ -73,72 +85,6 @@ html, body {
     right: 20px;
 }
 
-/* 🔹 Ensure proper spacing in mobile layout */
-@media screen and (max-width: 768px) {
-    .top-bar {
-        flex-direction: column;
-        align-items: right;
-        justify-content: space-between;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .logo {
-        width: 50px; /* Slightly smaller logo on mobile */
-        height: auto;
-    }
-    #click-instruction {
-        font-size: 18px;
-        margin: 15px 0;
-        color: #000; /* or whatever color fits your design */
-      }
-
-    .icons {
-        display: flex;
-        gap: 10px;
-        align-items: right;
-    }
-
-    .social-icon, .telegram-icon {
-        width: 25px; /* Make icons smaller */
-        font-size: 25px;
-    }
-
-    /* 🔹 Reduce header size to prevent overlapping */
-    .header {
-        font-size: 32px; /* Reduce font size */
-        max-width: 80%; /* Prevents overflow */
-        text-align: center;
-        margin: 10px auto; /* Center it properly */
-    }
-}
-
-/* 🔹 Fix for extra small screens (phones) */
-@media screen and (max-width: 480px) {
-    .top-bar {
-        flex-direction: column; /* Stack logo & icons */
-        align-items: right;
-    }
-
-    .logo {
-        width: 45px;
-    }
-
-    .icons {
-        gap: 8px;
-    }
-
-    .social-icon, .telegram-icon {
-        width: 22px; /* Adjust icons */
-    }
-
-    .header {
-        font-size: 28px; /* Reduce font size further */
-        max-width: 90%;
-    }
-}
-
-/* Center content and make it fit */
 .content {
     display: flex;
     align-items: center;
@@ -161,16 +107,6 @@ html, body {
     text-align: center;
     margin-top: 30px; /* Add spacing */
     font-size: 28px;
-}
-
-/* Ensure TSA counter fits properly */
-.tsa-counter {
-    font-size: 24px;
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    border-radius: 8px;
-    min-width: 150px;
 }
 
 /* Footer */
@@ -272,7 +208,7 @@ html, body {
     }
 
     .logo {
-        width: 45px;
+        height: 40px;
     }
 
     .icons {
