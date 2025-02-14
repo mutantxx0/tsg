@@ -143,7 +143,7 @@ html, body {
     }
 
     .logo {
-        width: 50px; /* Slightly smaller logo on mobile */
+        width: 70px; /* Slightly smaller logo on mobile */
         height: auto;
     }
     .content {
@@ -189,6 +189,7 @@ html, body {
     .social-icon, .telegram-icon {
         width: 25px; /* Make icons smaller */
         font-size: 25px;
+        height: auto;
     }
 }
 
