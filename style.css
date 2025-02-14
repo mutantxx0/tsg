@@ -1,14 +1,41 @@
+/* Reset / Box Sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ─────────────────────────────────────────────────────────
+   Font Face Declarations
+   ───────────────────────────────────────────────────────── */
+
+/* Regular weight */
+@font-face {
+    font-family: "MyFont"; /* The name you’ll use in font-family. */
+    src: url("./fonts/regularf.otf") format("opentype");
+    font-style: normal;
+    font-weight: 400;      /* 400 = regular weight */
+}
+  
+/* Bold weight */
+@font-face {
+    font-family: "MyFont"; /* Same name so you can switch using font-weight */
+    src: url("./fonts/boldf.otf") format("opentype");
+    font-style: normal;
+    font-weight: 700;      /* 700 = bold weight */
+}
+
+/* ─────────────────────────────────────────────────────────
+   Base HTML and Body
+   ───────────────────────────────────────────────────────── */
+
 html, body {
     height: 100%;
     width: 100%;
-    background-color: #ffeeee; /* Updated Background Color */
-    font-family: Arial, sans-serif;
+    background-color: #ffeeee;
+    /* Use MyFont (regular is weight 400) as default, fallback to sans-serif */
+    font-family: "MyFont", sans-serif;
+    font-weight: 400;           /* Regular weight */
     color: #ee5326;
     display: flex;
     flex-direction: column;
@@ -19,10 +46,16 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scroll */
     padding-top: 8px; /* Adds spacing so top content is visible */
 }
+
+/* ─────────────────────────────────────────────────────────
+   TSA Counter
+   ───────────────────────────────────────────────────────── */
+
 .tsa-counter {
+    font-family: "MyFont", sans-serif;
     font-size: 28px;
-    font-weight: bold;
-    color: #ffeeee;       /* Text color */
+    font-weight: 700; /* Use bold variant */
+    color: #ffeeee;   /* Text color */
     background-color: #ee5326; /* Box background color */
     padding: 12px 20px;
     border-radius: 10px;
@@ -30,7 +63,10 @@ html, body {
     text-align: center;
 }
 
-/* 🔹 Ensure proper alignment in `.top-bar` */
+/* ─────────────────────────────────────────────────────────
+   Top-Bar
+   ───────────────────────────────────────────────────────── */
+
 .top-bar {
     display: flex;
     align-items: right;
@@ -40,29 +76,43 @@ html, body {
     position: relative; /* Keeps it within document flow */
 }
 
-/* 🔹 Ensure logo is properly aligned */
+/* Logo */
 .logo {
-    height: 120px;     /* Adjust as needed */
-    width: auto;      /* Keep aspect ratio */
-    cursor: pointer;  /* Optional: give it a pointer cursor */
+    height: 120px;  /* Adjust as needed */
+    width: auto;    /* Keep aspect ratio */
+    cursor: pointer;/* Optional pointer cursor */
 }
-#click-instruction {
-    font-size: 28px;
-    margin: 15px 0;
-    color: #ee5326; 
-    padding: 0px 0px/* or whatever color fits your design */
-  }
 
-/* 🔹 Ensure header is centered */
+/* ─────────────────────────────────────────────────────────
+   Click Instruction
+   ───────────────────────────────────────────────────────── */
+
+#click-instruction {
+    font-family: "MyFont", sans-serif;
+    font-size: 28px;
+    font-weight: 400;       /* Regular variant */
+    margin: 15px 0;
+    color: #ee5326;
+    padding: 0px 0px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Header
+   ───────────────────────────────────────────────────────── */
+
 .header {
+    font-family: "MyFont", sans-serif;
     font-size: clamp(40px, 5vw, 70px);
-    font-weight: bold;
+    font-weight: 700;  /* Bold variant */
     text-align: center;
     flex-grow: 1;
     white-space: nowrap;
 }
 
-/* 🔹 Icons container */
+/* ─────────────────────────────────────────────────────────
+   Icons
+   ───────────────────────────────────────────────────────── */
+
 .icons {
     display: flex;
     gap: 15px;
@@ -70,20 +120,25 @@ html, body {
     right: 20px;
 }
 
-/* 🔹 Social icons */
+/* Social icons */
 .social-icon {
-    width: aut0;
-    height: 3vw;
+    width: auto;     /* Fixed the typo from "aut0" */
+    height: 3vw;     /* Scales with viewport width */
     cursor: pointer;
     right: 20px;
 }
 
 .telegram-icon {
+    font-family: "MyFont", sans-serif; /* If there's text, use MyFont */
     font-size: 32px;
     color: black;
     cursor: pointer;
     right: 20px;
 }
+
+/* ─────────────────────────────────────────────────────────
+   Main Content (GIF container, etc.)
+   ───────────────────────────────────────────────────────── */
 
 .content {
     display: flex;
@@ -94,27 +149,40 @@ html, body {
     flex-wrap: nowrap;
 }
 
-/* 🔹 Increase GIF Size by 1.5x */
 #gif-container {
-    width: 75vh; /* Increased size */
-    max-width: 90%; /* Prevent overflow */
+    width: 75vh;      /* Increased size */
+    max-width: 90%;   /* Prevent overflow */
     height: auto;
     border-radius: 10px;
 }
 
+/* ─────────────────────────────────────────────────────────
+   Second Section
+   ───────────────────────────────────────────────────────── */
+
 .second-section {
     width: 100%;
     text-align: center;
-    margin-top: 30px; /* Add spacing */
+    margin-top: 30px;
+    font-family: "MyFont", sans-serif; /* Use your font here too */
+    font-weight: 400; /* Regular by default */
     font-size: 28px;
 }
 
-/* Footer */
+/* ─────────────────────────────────────────────────────────
+   Footer
+   ───────────────────────────────────────────────────────── */
+
 .footer {
+    font-family: "MyFont", sans-serif;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;  /* Bold if you want it bolder */
     margin-top: 10px;
 }
+
+/* ─────────────────────────────────────────────────────────
+   GIF Grid
+   ───────────────────────────────────────────────────────── */
 
 .gif-grid {
     display: flex;
@@ -129,22 +197,29 @@ html, body {
     height: auto;
     border-radius: 10px;
 }
-.two-pics {
-    display: flex;          /* Display images side by side by default */
-    gap: 20px;              /* Spacing between images */
-    justify-content: center;/* Centers them horizontally on larger screens */
-    align-items: center;    /* Aligns them vertically (optional) */
-    max-width: 700px;      /* Optional: limit container width */
-    margin: 0 auto;         /* Center the container if desired */
-  }
-  
-  .responsive-img {
-    max-width: 100%;        /* Ensure the images shrink if needed */
-    height: auto;           /* Maintain aspect ratio */
-  }
 
-/* 🔹 No Scrolling on Mobile + Adjust Image */
-/* 🔹 Fix mobile layout while keeping laptop unchanged */
+/* ─────────────────────────────────────────────────────────
+   Two Pics Section
+   ───────────────────────────────────────────────────────── */
+
+.two-pics {
+    display: flex;      /* side by side by default */
+    gap: 20px;          /* spacing between images */
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Responsive: Tablets / Medium Screens (<= 768px)
+   ───────────────────────────────────────────────────────── */
+
 @media screen and (max-width: 768px) {
     .top-bar {
         flex-direction: row;
@@ -159,32 +234,32 @@ html, body {
         flex-direction: column; /* Stack elements vertically */
         align-items: center;
         justify-content: center;
-        gap: 15px; /* Adds spacing */
+        gap: 15px;
         width: 100%;
     }
 
     .tsa-counter {
-        font-size: 20px; /* Reduce font size for mobile */
+        font-size: 20px;
+        font-weight: 700; /* keep it bold */
         padding: 10px 15px;
         text-align: center;
-        min-width: 160px; /* Ensures it doesn’t shrink too much */
-        max-width: 90%; /* Prevents it from extending beyond the screen */
-        word-break: break-word; /* Ensures text breaks properly */
-        white-space: normal; /* Allows wrapping */
-        overflow-wrap: break-word; /* Additional wrap handling */
-        display: block; /* Forces it to take full width when needed */
+        min-width: 160px;
+        max-width: 90%;
+        word-break: break-word;
+        white-space: normal;
+        overflow-wrap: break-word;
+        display: block;
     }
 
-    /* 🔹 Reduce header size & ensure visibility */
     .header {
-        font-size: 28px; /* Reduce font size */
-        max-width: 70%; /* Prevents text cutoff */
+        font-size: 28px; 
+        font-weight: 700; /* keep bold variant */
+        max-width: 70%;
         text-align: center;
-        white-space: normal; /* Allow wrapping if needed */
-        overflow: hidden; /* Prevents it from breaking layout */
+        white-space: normal;
+        overflow: hidden;
     }
 
-    /* 🔹 Align icons to the right without overlap */
     .icons {
         display: flex;
         gap: 10px;
@@ -196,36 +271,44 @@ html, body {
     }
 
     .social-icon, .telegram-icon {
-        width: 25px; /* Make icons smaller */
+        width: 25px; 
+        height: auto;
         font-size: 25px;
-        height: auto;
     }
+
     .logo {
-        width: 120px; /* Slightly smaller logo on mobile */
+        width: 120px; 
         height: auto;
     }
+
     .two-pics {
-        flex-direction: column; /* Stack images vertically on mobile */
-      }
-      .responsive-img {
-        max-width: 80%;        /* Keep them smaller so they fit nicely */
-        margin: 0 auto;        /* Center each image horizontally */
-      }
+        flex-direction: column; /* Stack images vertically on smaller screens */
+    }
+
+    .responsive-img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }
 
-/* 🔹 Fix for extra small screens (phones) */
+/* ─────────────────────────────────────────────────────────
+   Responsive: Phones / Small Screens (<= 480px)
+   ───────────────────────────────────────────────────────── */
+
 @media screen and (max-width: 480px) {
     .top-bar {
-        flex-direction: column; /* Stack logo, header & icons */
+        flex-direction: column; 
         align-items: center;
         justify-content: center;
         gap: 10px;
     }
+
     .tsa-counter {
-        font-size: 18px; /* Further reduce font size */
-        min-width: 140px; /* Prevent excessive shrinking */
+        font-size: 18px;
+        font-weight: 700; 
+        min-width: 140px;
         max-width: 95%;
-        word-break: break-word; /* Extra security for breaking long words */
+        word-break: break-word;
     }
 
     .logo {
@@ -233,16 +316,17 @@ html, body {
     }
 
     .icons {
-        position: static; /* Reset positioning */
+        position: static; 
         gap: 8px;
     }
 
     .social-icon, .telegram-icon {
-        width: 22px; /* Adjust icons */
+        width: 22px; 
     }
 
     .header {
-        font-size: 24px; /* Reduce font size further */
+        font-size: 24px;
+        font-weight: 700;
         max-width: 90%;
         text-align: center;
     }
