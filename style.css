@@ -201,7 +201,7 @@ html, body {
         height: auto;
     }
     .logo {
-        width: 110px; /* Slightly smaller logo on mobile */
+        width: 120px; /* Slightly smaller logo on mobile */
         height: auto;
     }
     .two-pics {
@@ -229,7 +229,7 @@ html, body {
     }
 
     .logo {
-        height: 70px;
+        height: 90px;
     }
 
     .icons {
