@@ -143,7 +143,7 @@ html, body {
     }
 
     .logo {
-        width: 70px; /* Slightly smaller logo on mobile */
+        width: 90px; /* Slightly smaller logo on mobile */
         height: auto;
     }
     .content {
