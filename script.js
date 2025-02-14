@@ -41,15 +41,6 @@ function handleInteraction() {
     });
 }
 
-// Attach both click and touchend to the document, but *exclude* clicks on .social-icon
-document.documentElement.addEventListener("click", (e) => {
-  if (!e.target.classList.contains("social-icon")) {
-    handleInteraction();
-  }
-}, false);
-
-document.documentElement.addEventListener("touchend", (e) => {
-  if (!e.target.classList.contains("social-icon")) {
-    handleInteraction();
-  }
-}, false);
+// Attach both click and touchend to the document
+document.documentElement.addEventListener("click", handleInteraction, false);
+document.documentElement.addEventListener("touchend", handleInteraction, false);
