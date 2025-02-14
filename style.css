@@ -35,6 +35,11 @@ html, body {
     width: 60px; 
     height: auto;
 }
+#click-instruction {
+    font-size: 28px;
+    margin: 15px 0;
+    color: #000; /* or whatever color fits your design */
+  }
 
 /* 🔹 Ensure header is centered */
 .header {
@@ -82,6 +87,11 @@ html, body {
         width: 50px; /* Slightly smaller logo on mobile */
         height: auto;
     }
+    #click-instruction {
+        font-size: 18px;
+        margin: 15px 0;
+        color: #000; /* or whatever color fits your design */
+      }
 
     .icons {
         display: flex;
