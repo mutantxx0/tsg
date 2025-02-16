@@ -5,11 +5,7 @@ const sound = document.getElementById("sound-effect");
 
 // A single function to handle clicks AND touches
 function handleInteraction() {
-    // Hide the instruction text on the very first interaction
-    const instruction = document.getElementById("click-instruction");
-    if (instruction) {
-        instruction.style.display = 'none';
-    }
+    // (Removed the code that hides #click-instruction)
 
     // If a GIF is already playing, ignore any further clicks/touches
     if (isPlaying) return;
