@@ -255,6 +255,7 @@ html, body {
         font-size: 28px; 
         font-weight: 700; /* keep bold variant */
         max-width: 70%;
+        margin: 0 auto;
         text-align: center;
         white-space: normal;
         overflow: hidden;
@@ -277,7 +278,7 @@ html, body {
     }
 
     .logo {
-        width: 120px; 
+        width: 140px; 
         height: auto;
     }
 
