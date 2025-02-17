@@ -260,6 +260,10 @@ html, body {
         white-space: normal;
         overflow: hidden;
     }
+    .footer {
+        font-size: 14px; 
+        font-weight: 700; /* keep bold variant */
+    }
 
     .icons {
         display: flex;
